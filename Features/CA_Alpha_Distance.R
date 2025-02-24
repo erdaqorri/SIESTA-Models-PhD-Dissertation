@@ -2,8 +2,6 @@
 
 # Required libraries
 library(bio3d)
-library(magrittr)
-library(dplyr)
 library(tidyverse)
 
 # Extract alpha carbons and calculate the Euclidean distance between wild-type and pathogenic pairs ----
