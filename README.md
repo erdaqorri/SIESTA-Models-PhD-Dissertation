@@ -8,11 +8,6 @@ It includes scripts for:
 
 ---
 
-## Features
-The developed features are provided as single R scripts and can be run in the following way.
-
-
-
 # Protein Structure Feature Extraction
 
 This repository provides R scripts for extracting structural features from **wild-type and mutant** protein structures. These features help analyze the impact of mutations on protein stability and function.
