@@ -5,9 +5,6 @@ library(bio3d)
 library(dplyr)
 library(stringr)
 
-# Read the max SASA values per residue
-max_values_sasa <- read.csv("path/to/max/sasa/max_value_sasa_per_amino_acid.csv")
-
 # Normalize SASA function
 calculate_sasa <- function(path_asa_file, pos) {
   
