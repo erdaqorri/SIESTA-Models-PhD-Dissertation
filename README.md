@@ -10,7 +10,36 @@ It includes scripts for:
 
 # Protein Structure Feature Extraction
 
-This repository provides R scripts for extracting structural features from **wild-type and mutant** protein structures. These features help analyze the impact of mutations on protein stability and function.
+## Input Data
+The required input data to test the features along with the feature-specific files can be found in the **Data/Input_PDB** directory.
+This directory has the following structure:
+1. Data/Input_PDB : contains three PDB files (wt, pathogenic, and benign)
+     - P68871_wt_rlx_model.pdb
+     - P68871_V127G_pathogenic_rlx_model.pdb
+     - P68871_K133N_benign_rlx_model.pdb
+2. Data/Delta_Sasa_Normalized_Max : contains three ASA files (wt, pathogenic, and benign) as well as Max SASA value that a residue can have
+     - P68871_wt_rlx_model.asa
+     - P68871_V127G_pathogenic_rlx_model.asa
+     - P68871_K133N_benign_rlx_model.asa
+     - max_value_sasa_per_amino_acid.csv
+
+  The ASA files were generated using the *dr-sasa* algorithm described in *Judemir Ribeiro, Carlos Ríos-Vera, Francisco Melo, Andreas Schüller, Calculation of accurate interatomic contact surface areas for the quantitative analysis of non-bonded molecular interactions, Bioinformatics, Volume 35, Issue 18, September 2019, Pages 3499–3501, https://doi.org/10.1093/bioinformatics/btz062*. To generate the files provided here, dr-sasa was run on **mode 0** with default parameters.
+
+The maximum SASA value of every amino acid residue was calculated on a curated collection of experimentally resolved protein structures, provided by de la Cruz lab.
+
+3. Data/MJ_Potential_Mutant: contains three csv files (wt, pathogenic, benign) and the MJ energy potentials table
+     - P68871_wt_contact_avg_side_chain_table.csv
+     - P68871_V127G_pathogenic_contact_avg_side_chains.csv
+     - P68871_K133N_benign_contact_avg_side_chains.csv
+     - MJ_Potential_Table.csv
+  
+   The contact average side chains were calculated used a script provided by de la Cruz lab, while the MJ Potential Table was also provided by this lab.
+
+4. Data/dRMS_Local: contains one JSON file of the wild type
+     - P68871_wt_rlx_model.json
+  
+   The JSON file was generated using the Arpeggio algorithm (https://pdbeurope.github.io/api-webinars/webinars/web5/arpeggio.html)
+
 
 ## 📌 Features
 
@@ -18,6 +47,9 @@ Each feature is implemented as a standalone **R script**. The scripts can be fou
 
 
 ### **1. Alpha Carbon Distance**
+
+Input PDB files can be retrieved from: 
+
 - **Script:** `features/CA_Alpha_Distance.R`
 - **Description:** Computes the distance between C-alpha atoms of wild-type and mutant structures.
 - **Input:**
