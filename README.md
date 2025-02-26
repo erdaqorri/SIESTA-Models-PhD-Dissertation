@@ -4,8 +4,7 @@ This repository contains the necessary code to reproduce the results reported in
 It includes scripts for:
 - Predicting wild-type and mutated protein structures using ParaFold (HPC environment only)
 - Source code for the developed structural features
-- Source code to run the SIESTA-suite models: SIESTA, SIESTA-Str, and SIESTA-Seq
-
+- Source code to run the SIESTA model
 ---
 
 # Protein Structure Feature Extraction
@@ -133,6 +132,19 @@ calculate_dsum("path/to/wt.json",
                "pos"
 ```
 
+## 📌 Run SIESTA
+
+SIESTA is an XGBoost model trained on both sequence and structure derived features from the AlphaFold2 generated structures.
+
+- **Script:** `SIESTA.py`
+- **Input:**  
+  - --features.csv: csv file containing the extracted features
+  - --output_model: trained SIESTA model saved in pkl format
+- **Usage**:
+
+```bash
+python3 SIESTA.py  --features_csv "siesta_feature_test.csv"  --output_model "siesta.pkl" 
+```
 
 
 
