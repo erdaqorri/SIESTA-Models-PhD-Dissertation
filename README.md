@@ -9,7 +9,7 @@ It includes scripts for:
 
 # 📌 Protein Structure Feature Extraction
 
-The protein structures of a curated collection of missense variants retrieved from Humsavar were generated using ParaFold (doi.org/10.1145/3503470.3503471), an HPC-friendly implementation of AlphaFold2.
+The protein structures of a curated dataset of missense variants retrieved from Humsavar were generated using ParaFold (doi.org/10.1145/3503470.3503471), an HPC-friendly implementation of AlphaFold2.
 
 ParaFold was run in two stages:
 
@@ -46,22 +46,28 @@ Each feature is implemented as a standalone **R script**. The scripts can be fou
 - **Description:** Calculates the Euclidean distance between C-alpha atoms of wild-type and mutant structures.
 - **Input:**
   - Wild-type PDB file  
-  - Mutant PDB file  
+  - Mutant PDB file
+    
 - **Usage:**
+  
   ```r
   dist.rmsd("path/to/wt.pdb", "path/to/mt.pdb")
   ```
+  
 ### **2. Delta Alpha Carbon pLDDT**
 
 - **Script:** `Features/Delta_CA_pLDDT.R`
 - **Description:** Computes the normalized difference in per-residue pLDDT values between C-alpha atoms of wild-type and mutant structures.
 - **Input:**
   - Wild-type PDB file  
-  - Mutant PDB file  
+  - Mutant PDB file
+    
 - **Usage:**
+  
 ```r
    delta.ca.plddt.norm("path/to/wt.pdb", "path/to/mt.pdb")
   ```
+
 ### **3. Delta SASA**
 
 - **Script:** `Features/Delta_SASA_Normalized_Max.R`
@@ -95,8 +101,10 @@ calculate_delta_sasa("path/to/wt.pdb",
   - MJ Table 
   - Wild-type amino acid residue (char)
   - Wild-type position (int)
-  - Mutant amino acid residue (int) 
+  - Mutant amino acid residue (int)
+    
 - **Usage**:
+  
 ```r
 calculate_dsum("path/to/wt_avg_side_chain_table.csv",
                "path/to/mt_avg_side_chain_table.csv",
@@ -116,7 +124,9 @@ calculate_dsum("path/to/wt_avg_side_chain_table.csv",
   - Wild-type amino acid residue (char)
   - Mutant predicted structure in PDB format
   - Wild-type position (int)
+    
 - **Usage**:
+
 ```r
 calculate_dsum("path/to/wt.json",
                "path/to/wt.pdb",
@@ -132,7 +142,9 @@ SIESTA is an XGBoost model trained on both sequence and structure derived featur
 - **Input:**  
   - --features.csv: csv file containing the extracted features (test features file is provided in *Data/SIESTA/siesta_features_test.csv*)
   - --output_model: trained SIESTA model (specify the directory to save the trained SIESTA model in pkl format)
+
 - **Usage**:
+
 ```bash
 python3 SIESTA.py  --features_csv "siesta_feature_test.csv"  --output_model "siesta.pkl" 
 ```
@@ -156,8 +168,7 @@ This directory has the following structure:
      - P68871_K133N_benign_rlx_model.asa
      - max_value_sasa_per_amino_acid.csv
 
-The ASA files were generated using the *dr-sasa* algorithm described in *Judemir Ribeiro, Carlos Ríos-Vera, Francisco Melo, Andreas Schüller, Calculation of accurate interatomic contact surface areas for the quantitative analysis of non-bonded molecular interactions, Bioinformatics, Volume 35, Issue 18, September 2019, Pages 3499–3501, https://doi.org/10.1093/bioinformatics/btz062*. 
-To generate the files provided here, dr-sasa was run on **mode 0** with default parameters.
+The ASA files were generated using the *dr-sasa* algorithm described in *Judemir Ribeiro, Carlos Ríos-Vera, Francisco Melo, Andreas Schüller, Calculation of accurate interatomic contact surface areas for the quantitative analysis of non-bonded molecular interactions, Bioinformatics, Volume 35, Issue 18, September 2019, Pages 3499–3501, https://doi.org/10.1093/bioinformatics/btz062*. To generate the files provided here, dr-sasa was run on **mode 0** with default parameters.
 
 The maximum SASA value of every amino acid residue was calculated on a curated collection of experimentally resolved protein structures, provided by de la Cruz lab.
 
