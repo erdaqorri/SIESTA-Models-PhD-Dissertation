@@ -89,7 +89,7 @@ calculate_delta_sasa("path/to/wt.pdb",
                      "path/to/wt.asa",
                      "path/to/mt.asa",
                       position,
-                      max_sasa_value),
+                      max_sasa_value)
 ```
 
 ### **4. MJ Potential Mutant**
@@ -130,10 +130,10 @@ calculate_dsum("path/to/wt_avg_side_chain_table.csv",
 - **Usage**:
 
 ```r
-calculate_dsum("path/to/wt.json",
+process_protein_structures("path/to/wt.json",
                "path/to/wt.pdb",
                "path/to/mt.pdb",
-               "pos"
+               pos
 ```
 
 ## 📌 Run SIESTA
