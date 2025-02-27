@@ -31,7 +31,7 @@ Other algorithms required to generate the input files for the calculation of som
      3. PatMut (https://github.com/selenozkan/QAFI)
 
 PatMut is required to extract the sequence-derived features used to train SIESTA: PSSM-Native, Entropy, Substitution Matrix, and Hydrophobicity.
-A detailed description on how PatMut works and can be used to extract the features can be found in https://github.com/selenozkan/QAFI.
+A detailed description on how to install PatMut can be found in https://github.com/selenozkan/QAFI.
       
 
 # 📌 Features
@@ -39,6 +39,8 @@ A detailed description on how PatMut works and can be used to extract the featur
 The generated wild type and mutated protein structures were processed to develop five features: Alpha Carbon Distance, Delta Alpha Carbon pLDDT, Delta SASA, MJ Potential Mutant, and dRMS Local. 
 Each feature is implemented as a standalone **R script**. The scripts can be found in the `Features` directory.
 *In the future I will finish a CLI version of the features!*
+
+If you run the features using the test files provided here you can compare the results with the ones here: *Data/Features_Test_Results/features_test_results.xls*.
 
 ### **1. Alpha Carbon Distance**
 
