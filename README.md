@@ -32,6 +32,17 @@ Other algorithms required to generate the input files for the calculation of som
 
 PatMut is required to extract the sequence-derived features used to train SIESTA: PSSM-Native, Entropy, Substitution Matrix, and Hydrophobicity.
 A detailed description on how to install PatMut can be found in https://github.com/selenozkan/QAFI.
+
+### Dependencies to run SIESTA.py can be installed as shown below:
+
+```bash
+pip install argparse
+pip install numpy
+pip install pandas
+pip install sklearn-preprocessing
+pip install xgboost
+pip install joblib
+```
       
 
 # 📌 Features
