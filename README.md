@@ -34,14 +34,11 @@ PatMut is required to extract the sequence-derived features used to train SIESTA
 A detailed description on how to install PatMut can be found in https://github.com/selenozkan/QAFI.
 
 ### Dependencies to run SIESTA.py can be installed as shown below:
+### The SIESTA_env.yaml file can be downloaded from: `SIESTA/SIESTA_env.yaml`
 
 ```bash
-pip install argparse
-pip install numpy
-pip install pandas
-pip install sklearn-preprocessing
-pip install xgboost
-pip install joblib
+conda env create -f SIESTA_env.yaml
+conda activate SIESTA
 ```
       
 
