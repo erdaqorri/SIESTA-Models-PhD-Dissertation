@@ -1,0 +1,15 @@
+---
+name: SIESTA
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.9
+  - pandas
+  - numpy
+  - pip
+  - pip:
+      - argparse
+      - scikit-learn
+      - xgboost
+      - joblib
