@@ -1,5 +1,5 @@
 # Code to reproduce the results presented in my PhD Dissertation
-This repository contains the necessary code to reproduce the results reported in my PhD dissertation tittled: Enhancing Missense Variant Classification with AlphaFold2-Generated Mutant Structures
+This repository contains the necessary code to reproduce the results reported in my PhD dissertation tittled: **Enhancing Missense Variant Classification with AlphaFold2-Generated Mutant Structures**
 
 It includes scripts for:
 - Predicting wild-type and mutated protein structures using ParaFold
